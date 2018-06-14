@@ -14,7 +14,7 @@ public class App {
 		}
 	}
 
-	public static void call(String q){
+	private static void call(String q){
 		try{
 			URL url = new URL( "http://challenge-server.code-check.io/api/hash");
 			System.out.println("1");
@@ -40,11 +40,11 @@ public class App {
 //				}
 			} finally {
 				if (connection != null) {
-					connection.disconnect();;
+					connection.disconnect();
 				}
 			}
 		} catch (IOException e) {
-				e.printStackTrace();;
+				e.printStackTrace();
 		}
 	}
 }
