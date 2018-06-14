@@ -16,15 +16,6 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
 
-  <repositories>
-      <repository>
-        <id>hashapi</id>
-        <name>Hash API</name>
-        <url>http://challenge-server.code-check.io/api/hash</url>
-      </repository>
-  </repositories>
-
-
   <build>
     <plugins>
       <plugin>
