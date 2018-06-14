@@ -28,6 +28,7 @@ public class App {
 				connection.setRequestProperty("q", q);
 				//connection.setRequestProperty("hash",null);
 				System.out.println("3");
+				System.out.println(q);
 
 				connection.connect();
 				System.out.println("4");
