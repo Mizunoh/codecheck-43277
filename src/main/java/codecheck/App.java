@@ -26,7 +26,7 @@ public class App {
 				connection = (HttpURLConnection) url.openConnection();
 				connection.setRequestMethod("GET");
 				connection.setRequestProperty("q", q);
-				connection.setRequestProperty("hash",null);
+				//connection.setRequestProperty("hash",null);
 				System.out.println("3");
 
 				connection.connect();
