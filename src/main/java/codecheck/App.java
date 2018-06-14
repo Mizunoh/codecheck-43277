@@ -31,6 +31,7 @@ public class App {
 
 				connection.connect();
 				System.out.println("4");
+				System.out.println(connection.getResponseCode());
 
 				if(connection.getResponseCode() == HttpURLConnection.HTTP_OK) {
 					System.out.println("5");
