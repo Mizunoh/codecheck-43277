@@ -16,7 +16,7 @@ public class App {
 	public static void main(String[] args) {
 		for (int i = 0, l = args.length; i < l; i++) {
 			String output = String.format("argv[%s]: %s", i, args[i]);
-			System.out.println(output);
+//			System.out.println(output);
 			call(args[i]);
 		}
 	}
@@ -25,20 +25,20 @@ public class App {
 		try {
 			String sUrl = "http://challenge-server.code-check.io/api/hash?q=";
 			URL url = new URL(sUrl + q);
-			System.out.println("1");
+//			System.out.println("1");
 
 			HttpURLConnection connection = null;
-			System.out.println("2");
+//			System.out.println("2");
 
 			try {
 				connection = (HttpURLConnection) url.openConnection();
 				connection.setRequestMethod("GET");
-				System.out.println("3");
-				System.out.println(q);
+				//System.out.println("3");
+//				System.out.println(q);
 
 				connection.connect();
-				System.out.println("4");
-				System.out.println(connection.getResponseCode());
+//				System.out.println("4");
+//				System.out.println(connection.getResponseCode());
 
 
 				//ここでレスポンスのボディからhashの値を取りたい
