@@ -29,17 +29,50 @@ public class App {
 			try {
 				connection = (HttpURLConnection) url.openConnection();
 				connection.setRequestMethod("GET");
-				//connection.setRequestProperty("q", q);  //渡し方がこれじゃない？URLに直接付与？
-				//connection.setRequestProperty("hash",null);
 				System.out.println("3");
 				System.out.println(q);
 
 				connection.connect();
 				System.out.println("4");
-				System.out.println(connection.getResponseCode());  //400になってる（qが渡っていない？）
+				System.out.println(connection.getResponseCode());
 
 
 				//ここでレスポンスのボディからhashの値を取りたい
+				InputStream is = connection.getInputStream();
+				BufferedReader reader = new BufferedReader(new InputStreamReader(is, "utf-8"));
+				StringBuilder sbBody = new StringBuilder();
+				String s;
+				while ((s = reader.readLine()) != null) {
+					sbBody.append(s);
+				}
+
+				System.out.println(sbBody.toString());
+
+
+
+				/*
+				// ヘッダーの取り方だった
+				LinkedHashMap<String, String> resHeader = new LinkedHashMap<String, String>();
+				Map<String, List<String>> header = connection.getHeaderFields();
+				Iterator<String> headerIt = header.keySet().iterator();
+
+				while (headerIt.hasNext()) {
+					String key = headerIt.next();
+					List<String> valList = header.get(key);
+					if (key != null) {
+						StringBuilder sb = new StringBuilder();
+						for (String val : valList) {
+							if (sb.length() > 0)
+								sb.append("\n");
+							sb.append(val);
+						}
+						resHeader.put(key, sb.toString());
+					}
+				}
+				*/
+
+
+
 				//InputStream is = connection.getInputStream();
 				//BufferedReader reader = new BufferedReader(new InputStreamReader(is, "utf-8"));
 
