@@ -10,6 +10,7 @@ import java.net.URL;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.core.type.TypeReference;
 
 public class App {
 	public static void main(String[] args) {
