@@ -7,6 +7,9 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.URL;
+import java.util.LinkedHashMap;
+import java.util.Map;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class App {
 	public static void main(String[] args) {
@@ -46,9 +49,24 @@ public class App {
 					sbBody.append(s);
 				}
 
-				System.out.println(sbBody.toString());
+                Map<String,String> map = new LinkedHashMap<>();
+                ObjectMapper mapper = new ObjectMapper();
+				try {
+					map = mapper.readValue(sbBody.toString(), new TypeReference<LinkedHashMap<String,String>>(){});
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+
+				System.out.println(map.get("hash"));
 
 
+
+
+
+
+
+
+				//System.out.println(sbBody.toString());
 
 				/*
 				// ヘッダーの取り方だった
