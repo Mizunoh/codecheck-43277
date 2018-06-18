@@ -22,7 +22,7 @@ public class App {
 	private static void call(String q) {
 		try {
 			String sUrl = "http://challenge-server.code-check.io/api/hash?q=";
-			URL url = new URL(sUrl + q);
+			URL url = new URL(sUrl + q + "\"");
 			HttpURLConnection connection = null;
 
 			try {
